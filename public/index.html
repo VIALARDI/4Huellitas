@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4 Huellitas</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Agrega un archivo CSS global si es necesario -->
+    <style>
+        /* Estilos adicionales */
+        .carousel {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            margin-top: 20px; /* Ajusta el margen superior */
+        }
+        
+        .carousel img {
+            flex: 0 0 auto;
+            scroll-snap-align: start;
+            width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <!-- Contenedor para la aplicación React -->
+    <div id="root"></div>
+
+    <div class="welcome-box">
+        <img src="images/servicio-al-cliente.png" alt="servicio-al-cliente">
+        <h5>Atención al Cliente  |  </h5>
+        <img src="images/whatsapp.png" alt="whatsapp">
+        <h5>936372332</h5>
+    </div>
+
+    <div class="welcome-box" style="height: 2cm; background-color: #F1DC74; display: flex; align-items: center; justify-content: center;">
+        <h1 style="margin-bottom: 0;">4 Huellitas</h1>
+        <input type="text" placeholder="Buscar productos"> <!-- Ajusta el margen izquierdo del buscador -->
+        <a href="carrito.html" class="carrito-link">Carrito</a> <!-- Agrega un enlace al carrito con margen izquierdo -->
+    </div>
+
+    
+
+    <!-- Contenido adicional -->
+    <div class="links-container">
+        <a href="pagina1.html">Página 1</a>
+        <a href="pagina2.html">Página 2</a>
+        <a href="pagina3.html">Página 3</a>
+    </div>
+
+    <!-- Carrusel de imágenes -->
+    <div class="carousel">
+        <img src="images/1.jpg" alt="Imagen 1" class="img-pequeña">
+        <img src="images/2.jpg" alt="Imagen 2" class="img-pequeña">
+        <img src="images/3.jpg" alt="Imagen 3" class="img-pequeña">
+    </div>
+
+    <header>
+        <h1>Encabezado</h1>
+        <!-- Aquí puedes agregar tu barra de navegación u otras opciones de navegación -->
+    </header>
+
+    <main>
+        <!-- Contenido principal de la página -->
+        <section id="main-content">
+            <!-- Esto se llenará con el contenido de tu aplicación React -->
+        </section>
+
+        <!-- Aquí puedes agregar más contenido, como imágenes, comentarios, etc. -->
+    </main>
+
+    <footer>
+        <!-- Pie de página -->
+        <p>4 huellitas - © 2024</p>
+    </footer>
+
+    <script>
+        // JavaScript para el carrusel de imágenes
+        let index = 0;
+        const slides = document.querySelectorAll('.carousel img');
+        const totalSlides = slides.length;
+        
+        function nextSlide() {
+            slides[index].style.display = 'none';
+            index = (index + 1) % totalSlides;
+            slides[index].style.display = 'block';
+        }
+        
+        setInterval(nextSlide, 3000); // Cambia la imagen cada 3 segundos
+    </script>
+</body>
+</html>

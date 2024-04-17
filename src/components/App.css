@@ -1,0 +1,240 @@
+/* Estilos globales */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  color: blue;
+}
+
+/* Estilos para el encabezado */
+header {
+  background-color: #333;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Estilos para el contenido principal */
+#main-content {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin-top: 20px;
+}
+
+/* Estilos para el pie de página */
+footer {
+  background-color: #333;
+  color: pink;
+  text-align: center;
+  padding: 20px;
+}
+
+/* Estilos para el cuadro de inicio de sesión */
+.login-box {
+  position: fixed;
+  top: 50%;
+  right: 5%;
+  transform: translate(0, -50%);
+  background-color: #5E8CB0;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para el formulario de inicio de sesión dentro del cuadro */
+.login-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-form input {
+  margin-bottom: 10px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.login-form button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  font-weight: bold;
+  font-size: 100%;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.login-form button:hover {
+  background-color: green;
+}
+
+/* Estilos para la caja de bienvenida */
+.welcome-box {
+  background-color: #2E7A0F; /* Cambia el color de fondo a naranja */
+  height: 2%; /* Ajustar la altura a la mitad */
+  display: flex;
+  align-items: center;
+  justify-content: flex-end; /* Alinea el contenido hacia la derecha */
+  padding-right: 10px; /* Agrega un padding de 50px a la derecha */
+  padding: 10px 20px;
+}
+
+.welcome-box h5 {
+  color: white;
+}
+
+.welcome-box img {
+  height: 100%; /* Ajustar la altura de las imágenes al 100% del contenedor */
+
+}
+
+
+.margin-bottom {
+  padding-left: 100px;
+
+}
+
+/* Estilos al pasar el ratón sobre el enlace */
+.welcome-box a:hover {
+  background-color: #5E8CB0; /* Cambia el color de fondo del enlace al pasar el ratón */
+  color: white; /* Cambia el color del texto del enlace al pasar el ratón */
+}
+
+/* Estilos para las imágenes en la caja de bienvenida */
+.welcome-box img {
+  width: 30px; /* Establece el ancho de las imágenes */
+  height: auto; /* Mantiene la proporción de aspecto */
+  border-radius: 50%; /* Redondea las esquinas para crear un efecto circular */
+  padding: 10px 25px 0px 25px; /* Espaciado interno */
+}
+
+/* Estilos para el enlace "Carrito" dentro de la caja de bienvenida */
+.welcome-box a[href="carrito.html"] {
+  text-decoration: none; /* Quita el subrayado del enlace */
+  color: blue; /* Cambia el color del texto del enlace */
+  padding: 5px 10px; /* Ajusta el padding del enlace */
+  border: 1px solid blue; /* Agrega un borde al enlace */
+  border-radius: 5px; /* Aplica un radio de borde al enlace */
+  transition: margin-left 0.3s ease; /* Agrega una transición suave al margen izquierdo */
+}
+
+
+/* Estilos al pasar el ratón sobre el enlace */
+.welcome-box a[href="carrito.html"]:hover {
+  margin-left: 10px; /* Reduce el margen izquierdo al pasar el ratón */
+}
+
+/* Estilos para el input dentro de la caja de bienvenida */
+.welcome-box input[type="text"] {
+  margin: 0 auto; /* Centra el elemento horizontalmente */
+  display: block; /* Asegura que el input tenga ancho completo */
+  padding: 15px; /* Ajusta el padding para hacer el campo más grande */
+  width: 50%; /* Ajusta el ancho del campo de texto */
+  border-radius: 50px;
+}
+
+.welcome-box h1 {
+  margin: 0; /* Elimina el margen predeterminado del encabezado */
+  padding: 50px; /* Añade un padding de 10px a todos los lados */
+}
+
+.welcome-box input[type="text"] {
+  margin-left: 20px;
+}
+
+.welcome-box a {
+  margin-left: 20px;
+}
+
+.carrito-link {
+  margin-right: 15%;
+  padding: 50px;
+  border-radius: 50%;
+  color: blue;
+  text-decoration: none;
+}
+
+/* Estilos para el contenedor de enlaces */
+.links-container {
+  margin-top: 0px; /* Margen superior */
+  background-color: white;
+}
+
+/* Estilos para los enlaces */
+.links-container a {
+  display: inline-block; /* Convertir enlaces en bloques para que ocupen toda la anchura disponible */
+  text-decoration: none; /* Eliminar subrayado del texto */
+  color: black; /* Color del texto */
+  padding: 10px 5px 0px 70px; /* Espaciado interno */
+  margin-bottom: 10px; /* Margen inferior */
+  background-color: white;  /*Color de fondo */
+  border-radius: 8px; /* Borde redondeado */
+  transition: background-color 0.3s ease; /* Transición suave del color de fondo */
+}
+
+/* Estilos al pasar el ratón sobre los enlaces */
+.links-container a:hover {
+  background-color: #5E8CB0; /* Cambio de color de fondo al pasar el ratón */
+}
+
+
+/* Estilos adicionales para el carrusel */
+.carousel {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  margin-top: 20px; /* Ajusta el margen superior */
+  width: 100%; /* Ajusta el ancho al 100% */
+  padding: 0; /* Elimina cualquier relleno */
+}
+
+/* Agrega estilos para las imágenes */
+img {
+  width: 10px; /* Establece el ancho al 100% para que la imagen cubra horizontalmente */
+  height: auto; /* Mantiene la proporción de aspecto */
+  max-width: 50vh;
+  max-height: 50vh; /* Establece la altura máxima como el 50% de la altura del viewport */
+  object-fit: cover; /* Escala la imagen para que cubra completamente su contenedor manteniendo la relación de aspecto */
+}
+
+/* Agrega estilos adicionales para ajustar el tamaño de las imágenes según sea necesario */
+.img-pequeña {
+  max-width: 100%; /* Establece un ancho máximo específico para imágenes pequeñas */
+  height: 100%;
+}
+
+.login-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.social-login{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.google-logo {
+  display: inline-flex; /* Usar inline-flex para alinear verticalmente */
+  align-items: center; /* Alinear verticalmente */
+  width: 25px; /* Ancho de la imagen */
+  height: 25px; /* Altura de la imagen */
+  border-radius: 50%; /* Aplicar bordes redondeados */
+  margin-right: 10px; /* Margen a la derecha para separar del texto */
+  vertical-align: middle; /* Alinear verticalmente */
+}
+
+.facebook-logo {
+  display: inline-flex; /* Usar inline-flex para alinear verticalmente */
+  align-items: center; /* Alinear verticalmente */
+  width: 25px; /* Ancho de la imagen */
+  height: 25px; /* Altura de la imagen */
+  border-radius: 50%; /* Aplicar bordes redondeados */
+  margin-right: 10px; /* Margen a la derecha para separar del texto */
+  vertical-align: middle; /* Alinear verticalmente */
+}
