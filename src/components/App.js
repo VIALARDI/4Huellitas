@@ -1,73 +1,78 @@
 import React, { useState } from 'react';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'; // Importa Routes también
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
-import firebase from 'firebase/compat/app';
-import 'firebase/compat/auth';
+import { initializeApp } from 'firebase/app';
+import { getAuth, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 import Login from './Login';
-import Pets from './Pets';
-import ShoppingCart from './ShoppingCart';
-import HomeCookedMeals from './HomeCookedMeals';
-import PetWeddings from './PetWeddings';
-import Healthcare from './Healthcare';
-import PetNames from './PetNames';
+import { createUserWithEmailAndPassword } from 'firebase/auth';
+import Carrito from './Carrito';
 
-// Configuración de Firebase
 const firebaseConfig = {
-  apiKey: "TU_API_KEY",
-  authDomain: "TU_DOMINIO.firebaseapp.com",
-  projectId: "TU_ID_DE_PROYECTO",
-  storageBucket: "TU_STORAGE_BUCKET",
-  messagingSenderId: "TU_SENDER_ID",
-  appId: "TU_APP_ID",
-  measurementId: "TU_MEASUREMENT_ID"
+  apiKey: "AIzaSyA59qbASepDAJRrIZL1yePlQ4JPe-LYhHI",
+  authDomain: "4huellitas.firebaseapp.com",
+  projectId: "huellitas-2446e",
+  storageBucket: "gs://huellitas-2446e.appspot.com",
+  messagingSenderId: "908845715064",
+  appId: "1:908845715064:web:95fa77c6c85e9aaab4278d",
+  measurementId: "G-TMRY8XGJ49"
 };
 
-// Inicializamos Firebase
-const app = firebase.initializeApp(firebaseConfig);
+// Inicializar Firebase
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+
 
 function App() {
-  const [loggedIn, setLoggedIn] = useState(false);
-  const [cart, setCart] = useState([]);
-
+  const [loggedIn, setLoggedIn] = useState(true);//cambio a false
   const handleLogin = () => {
     console.log("Handle login called");
     setLoggedIn(true);
   };
 
-  const handleLogout = () => {
-    setLoggedIn(false);
-  };
-
-  const addToCart = (item) => {
-    setCart([...cart, item]);
-  };
-
   const handleGoogleLogin = async () => {
-    const provider = new firebase.auth.GoogleAuthProvider();
+    const provider = new GoogleAuthProvider();
     try {
-      await firebase.auth().signInWithPopup(provider);
+      const result = await signInWithPopup(auth, provider);
+      const user = result.user;
+      console.log("Usuario de Google:", user);
       setLoggedIn(true);
     } catch (error) {
-      console.error('Error al iniciar sesión con Google:', error);
+      console.error("Error al iniciar sesión con Google:", error);
     }
   };
 
   const handleFacebookLogin = async () => {
-    const provider = new firebase.auth.FacebookAuthProvider();
+    const provider = new FacebookAuthProvider();
     try {
-      await firebase.auth().signInWithPopup(provider);
+      const result = await signInWithPopup(auth, provider);
+      const user = result.user;
+      console.log("Usuario de Facebook:", user);
       setLoggedIn(true);
     } catch (error) {
-      console.error('Error al iniciar sesión con Facebook:', error);
+      console.error("Error al iniciar sesión con Facebook:", error);
     }
   };
 
+  const handleCreateAccount = async (email, password) => {
+    try {
+      const result = await createUserWithEmailAndPassword(auth, email, password);
+      const user = result.user;
+      console.log("Cuenta creada exitosamente:", user);
+      setLoggedIn(true);
+    } catch (error) {
+      console.error("Error al crear cuenta:", error);
+    }
+  };
+  
   console.log("Logged in state:", loggedIn);
 
   return (
     <Router>
       <div className="App">
-        {!loggedIn && <Login onLogin={handleLogin} onGoogleLogin={handleGoogleLogin} onFacebookLogin={handleFacebookLogin} />}
+        <Routes>
+          <Route path="/login" element={<Login onLogin={handleLogin} onGoogleLogin={handleGoogleLogin} onFacebookLogin={handleFacebookLogin} onCreateAccount={handleCreateAccount} />} />
+          {/* Otras rutas */}
+        </Routes>
       </div>
     </Router>
   );
