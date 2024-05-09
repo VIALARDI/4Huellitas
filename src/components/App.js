@@ -6,6 +6,11 @@ import { getAuth, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 import Login from './Login';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import Carrito from './Carrito';
+import ComidasCaseras from './ComidasCaseras';
+import Eventos from './Eventos';
+import Cuidados from './Cuidados';
+
+
 
 const firebaseConfig = {
   apiKey: "AIzaSyA59qbASepDAJRrIZL1yePlQ4JPe-LYhHI",

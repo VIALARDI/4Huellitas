@@ -25,19 +25,15 @@
             <a href="Carrito.html" class="carrito-link">Carrito</a>
         </header>
 
-        <div class="links-container">
-            <a href="index.html" id="enlace-home">Home</a>
-            <a href="pagina2.html">Página 2</a>
-            <a href="pagina3.html">Página 3</a>
-            <a href="PetWeddings.html">Bodas de Mascotas</a>
-        </div>
-
-        <!-- Carrusel -->
+         <!-- esto llama a lons links de navegacion -->
+        <iframe src="Menu.html" frameborder="0" width="100%" height="40" scrolling="no"></iframe>
+    
         <div class="carousel">
             <img src="images/1.jpg" alt="Imagen 1" class="img-pequeña">
             <img src="images/2.jpg" alt="Imagen 2" class="img-pequeña">
             <img src="images/3.jpg" alt="Imagen 3" class="img-pequeña">
         </div>
+
 
         <main>
             <section id="main-content">
@@ -57,10 +53,7 @@
             </section>
         </main>
 
-        <footer>
-            <p>4 huellitas - © 2024</p>
-        </footer>
-
+                                
         <div class="login-box">
             <form class="login-form">
                 <h2>Ingresa a tu cuenta:</h2>
@@ -80,7 +73,47 @@
                 </button>
             </div>        
         </div>
-        
+
+    
+        <div id="Formulario-container">
+            <div class="formulario">
+                <form>
+                    <label for="nombreapellido">Nombre y Apellido</label>
+                    <input type="text" id="nombreapellido" required>
+    
+                    <label for="correoelectronico">Correo Electrónico</label>
+                    <input type="email" id="correoelectronico" required placeholder="email@dominio.com">
+    
+                    <label for="telefono">Teléfono</label>
+                    <input type="tel" id="telefono" required placeholder="(XX) XXXX XXXX">
+    
+                    <label for="mensaje">Mensaje</label>
+                    <textarea id="mensaje" required></textarea>
+    
+                    <input type="submit" value="Enviar formulario">
+                </form>
+            </div>
+            <div class="imagenes-container">
+                <p>CONTÁCTANOS</p>
+                <img src="images/whatsapp.png" alt="whatsapp" style="width: 50px;">
+                <p>936372332</p>
+            </div>
+        </div>
+
+        <script>
+            const formulario = document.getElementById('miFormulario');
+    
+            formulario.addEventListener('submit', function (event) {
+                event.preventDefault();
+    
+                console.log('Formulario enviado');
+            });
+        </script>
+    
+    <footer>
+        <p>4 huellitas - © 2024</p>
+    </footer>   
+
         <script>
             let index = 0;
             const slides = document.querySelectorAll('.carousel img');

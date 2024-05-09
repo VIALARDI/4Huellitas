@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4 Huellitas</title>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="../src/components/App.css">
+</head>
+
+<body>
+    <div id="root"></div>
+
+    <div class="welcome-box">
+        <img src="images/servicio-al-cliente.png" alt="atencion-al-cliente" style="width: 30px;">
+        <h4>Atención al Cliente |</h4>
+        <img src="images/whatsapp.png" alt="whatsapp" style="width: 30px;">
+        <h4>936372332</h4>
+    </div>
+
+    <header>
+        <h1>4 Huellitas</h1>
+        <input type="text" placeholder="Buscar productos">
+        <a href="Carrito.html" class="carrito-link">Carrito</a>
+    </header>
+
+    <iframe src="Menu.html" frameborder="0" width="100%" height="40" scrolling="no"></iframe>
+    
+    <main>
+        <section id="main-content">
+        </section>
+
+        <section id="image-grid">
+            <div class="image-row">
+                <img src="images/4.jpg" alt="Imagen 4" class="img-cuadrada">
+                <img src="images/5.jpg" alt="Imagen 5" class="img-cuadrada">
+                <img src="images/6.jpg" alt="Imagen 6" class="img-cuadrada">
+            </div>
+            <div class="image-row">
+                <img src="images/7.jpg" alt="Imagen 7" class="img-cuadrada">
+                <img src="images/8.jpg" alt="Imagen 8" class="img-cuadrada">
+                <img src="images/9.jpg" alt="Imagen 9" class="img-cuadrada">
+            </div>
+        </section>
+    </main>
+
+        <div id="Formulario-container">
+            <div class="formulario">
+                <form>
+                    <label for="nombreapellido">Nombre y Apellido</label>
+                    <input type="text" id="nombreapellido" required>
+    
+                    <label for="correoelectronico">Correo Electrónico</label>
+                    <input type="email" id="correoelectronico" required placeholder="email@dominio.com">
+    
+                    <label for="telefono">Teléfono</label>
+                    <input type="tel" id="telefono" required placeholder="(XX) XXXX XXXX">
+    
+                    <label for="mensaje">Mensaje</label>
+                    <textarea id="mensaje" required></textarea>
+    
+                    <input type="submit" value="Enviar formulario">
+                </form>
+            </div>
+            <div class="imagenes-container">
+                <p>CONTÁCTANOS</p>
+                <img src="images/whatsapp.png" alt="whatsapp" style="width: 50px;">
+                <p>936372332</p>
+            </div>
+        </div>
+
+        <script>
+            const formulario = document.getElementById('miFormulario');
+    
+            formulario.addEventListener('submit', function (event) {
+                event.preventDefault();
+    
+                console.log('Formulario enviado');
+            });
+        </script>
+    
+    <footer>
+        <p>4 huellitas - © 2024</p>
+    </footer>    
+</body>
+</html>
